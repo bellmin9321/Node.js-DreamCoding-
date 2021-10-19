@@ -1,0 +1,73 @@
+HTTP: Hypertext Transfer Protocol
+HTTPS: Hypertext Transfer Protocol Secure
+
+HTTP v1
+- text-based
+- uncompressed headers
+- one file as a time
+- inefficient
+
+HTTP v2 >> 보안, 성능 개선
+- binary based protocol efficient/Secure: 
+- header compression
+- multiplexing: 여러 파일을 주고 받을 수 있음
+- stream prioritization
+
+HTTP v3 : TCP -> UDP
+
+client >>>>TCP connection>>>>>>> server
+           request:URL, headers
+           response: multiple file
+
+8.3 Status Code 활용하기
+1xx: Informational ex) 100: Continue / 102: Processing
+2xx: Successful ex) 200: Ok / 201: Created / 204: No Content
+3xx: Redirection ex)301: Moved Permanently / 302: Found / 303: See Other(get) / 307: Temporary Redirect(same methods) / 308: Permanent Redirect(same methods) 
+4xx: Client error ex) 400: Bad Request / 401: Unauthorized / 403: Forbidden(admin) / 404: Not Found / 405: Method Not Allowed / 409: Conflict
+5xx: Server error ex) 500: Interal Server Error / 502: Bad Gateway / 503: Service Unavailable
+
+Status Code: https://developer.mozilla.org/ko/docs/Web/HTTP/Status
+
+8.4 Request Method + 면접 질문!
+
+URL: Uniform Resource Locator(리소스가 어디에 있는지 나타내는 고유한 주소)
+
+https://www.server.com    /        index.html
+protocol   hostname      :443port    path
+
+https://www.server.com/courses/backend/search?q=love
+        hostname        -------pathname=====  query
+
+Request Methods
+- GET: get
+- POST: create
+- PUT: replace
+- DELETE: delete
+- PATCH: replace partially
+- HEAD: get without body
+- OPTIONS: all supported methods for URL
+- TRACE: echoes the received request
+
+서버에 있는 리소스를 읽기만 할때(or 서버 데이터를 변경하지 않는 요청)
+> GET / HEAD / OPTIONS / TRACE
+
+서버에 있는 데이터를 변경하는 요청 >> 면접 질문!!!
+> POST / ★PUT★ / DELETE / ★PATCH★
+
+https://developer.mozilla.org/ko/docs/Web/HTTP/Methods
+
+Idempotent: 동일한 요청을 여러번 했을 때 몇번 햇냐에 상관없이 항상 서버를 동일한 상태로 유지할 수 있냐를 나타냄
+GET / PUT
+https://developer.mozilla.org/ko/docs/Glossary/Idempotent
+
+8.5 Headers의 오해와 진실
+
+HTTP
+1. Stateless protocol
+2. Sessions & Cookies
+
+Headers
+1. standard > Authorization: Basic YMxhZGRpbjpvc.....
+2. custom > domain.key, domain-key (x-auth는 2012년부터 안씀)
+
+주소:  https://developer.mozilla.org/ko/docs/Web/HTTP/Headers
