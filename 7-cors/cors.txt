@@ -1,0 +1,29 @@
+CORS:
+Cross-origin resource sharing
+
+client가 server와 다른 domain에 있다면(다른 ip에 있다면) 그 어떤 data도 주고 받을 수 없음.
+만약 주고받을려면
+server에서 client에게 반응을 보낼 때, Access-Control-Allow-Origin이라는 Header에 추가하면 browser에서 server가 허용했기 때문에 해당 data를 가지고 와서 표기하므로 client에서 data를 받을 수 있음
+
+불편한 점
+1. header이름을 정확히 알아야함(오타 발생시 실행x)
+2. 
+
+so, 일일히 표기하지 않아도 사용할 수 있는 middleware가 있음
+
+CORS!
+-------------------------------------------
+11.13 유용한 외부 미들웨어들
+
+cookieParser
+
+morgan: 우리가 사용자에게 요청을 받을 때마다 어떤 요청을 받았는지 얼마나 걸렸는지 이런 유용한 정보를 로그로 남기고 싶을 때
+console.log('GET' + req.method) 이런 식으로 남겨야 하는데,
+이것을 자동으로 해주는게 morgan
+
+https://github.com/expressjs/morgan/blob/master/README.md
+
+helmet: cors에는 우리가 client에게 응답을 보낼 때 header에 해당 주소에 한해서는 내 server의 데이터를 보여줘도 되는거랑 비슷하지만,
+helmet은 공통적으로 보안에 관련된 header들을 추가해줘서 볼 수 있음.
+
+https://helmetjs.github.io/
