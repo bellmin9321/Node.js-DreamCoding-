@@ -11,9 +11,8 @@ function mkdir (dirPath) {
 mkdir('./test/captured');
 // mkdir('./test/duplicated');
 // mkdir('./test/video');
-
-const currentPath = path.join(__dirname, "test", "captured.png");
-const newPath = path.join(__dirname, "test/captured", 'captured.png');
+const currentPath = path.join(__dirname, "test", "jpg");
+const newPath = path.join(__dirname, "test/captured", "jpg");
 
 fs.rename(currentPath, newPath, function(err) {
   if (err) {
@@ -23,5 +22,12 @@ fs.rename(currentPath, newPath, function(err) {
   }
 });
 
-
 console.log(__dirname);
+
+// rename 이용
+// try {
+//   fs.renameSync(currentPath, newPath)
+//   console.log("Successfully moved the file!")
+// } catch(err) {
+//   throw err
+// }
