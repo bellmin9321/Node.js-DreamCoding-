@@ -19,6 +19,8 @@ const videoDir = path.join(workingDir, 'video');
 const capturedDir = path.join(workingDir, 'captured');
 const duplicatedDir = path.join(workingDir, 'duplicated');
 
-console.log(videoDir);
-console.log(capturedDir);
-console.log(duplicatedDir);
+// 해당 경로가 존재하지 않으면 만들고 존재하면 무시
+!fs.existsSync(videoDir) && fs.mkdirSync(videoDir);
+!fs.existsSync(capturedDir) && fs.mkdirSync(capturedDir);
+!fs.existsSync(duplicatedDir) && fs.mkdirSync(duplicatedDir);
+
