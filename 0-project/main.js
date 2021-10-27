@@ -24,3 +24,20 @@ const duplicatedDir = path.join(workingDir, 'duplicated');
 !fs.existsSync(capturedDir) && fs.mkdirSync(capturedDir);
 !fs.existsSync(duplicatedDir) && fs.mkdirSync(duplicatedDir);
 
+
+// 3. 폴더안에 있는 파일들을 다 돌면서 해당하는 mp4|mov, png|aae, IMG_1234(IMG_E1234)
+fs.promises
+  .readdir(workingDir) //
+  .then(processFiles)
+  .catch(console.log);
+
+  function processFiles(files) {
+    files.forEach((file) => {
+      
+    })
+  }
+
+  // 다른 방법
+  // .then(files => {files.forEach(file => {
+    
+  // })})
