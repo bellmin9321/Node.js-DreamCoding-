@@ -1,4 +1,3 @@
-
 const path = require('path');
 const process = require('process');
 const os = require('os');
@@ -6,6 +5,7 @@ const fs = require('fs');
 
 // 1. 사용자가 원하는 폴더의 이름을 받아온다
 const folder = process.argv[2];
+console.log(folder);
 const workingDir = path.join(__dirname, '.', folder);
 // ==은 같다, !=는 다르다, &&은 and, ||는 or, !은 not
 if (!folder || !fs.existsSync(workingDir)) {
@@ -42,7 +42,7 @@ fs.promises
   }
 
 function isVideoFile(file) {
-  const reqExp = /(mp4|mov)$/gm;
+  const reqExp = /(mp4|mov)$/gm; // extname 으로 활용해보기
   const match = file.match(reqExp);
   return !!match // match = 문자열이 정규식과 매치되는 부분을 검색
 }
@@ -71,6 +71,3 @@ function move(file, targetDir) {
     .rename(oldPath, newPath) //
     .catch(console.error)
 }
-
-const re = /ab+c/;
-console.log(re);
