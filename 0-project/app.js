@@ -10,20 +10,13 @@ if (!folder || !fs.existsSync(usingDir)) {
 }
 
 // video, duplicated, captured 폴더 생성
-const videoDir = path.join(__dirname, 'video');
-const duplicatedDir = path.join(__dirname, 'duplicated');
-const capturedDir = path.join(__dirname, 'captured');
+const videoDir = path.join(usingDir, 'video');
+const duplicatedDir = path.join(usingDir, 'duplicated');
+const capturedDir = path.join(usingDir, 'captured');
 
-if(!fs.existsSync(videoDir)) {
-  fs.mkdir(videoDir)
-  console.log('video dir');
-}
-// const videoDir = fs.mkdir(path.join(__dirname, 'video'), (e) => {
-//   if(!path.existsSync(videoDir)) {
-//     !videoDir
-//   }
-//   console.log('video 폴더 생성');
-// })
+!fs.existsSync(videoDir) && fs.mkdirSync(videoDir)
+!fs.existsSync(duplicatedDir) && fs.mkdirSync(duplicatedDir)
+!fs.existsSync(capturedDir) && fs.mkdirSync(capturedDir)
 
 
 
