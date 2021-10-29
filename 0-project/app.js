@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
 
 // 작업 폴더 설정
 const folder = 'pics';
@@ -17,6 +17,15 @@ const capturedDir = path.join(usingDir, 'captured');
 !fs.existsSync(videoDir) && fs.mkdirSync(videoDir)
 !fs.existsSync(duplicatedDir) && fs.mkdirSync(duplicatedDir)
 !fs.existsSync(capturedDir) && fs.mkdirSync(capturedDir)
+
+// 해당 폴더로 원하는 mp4/mov, png/aae, IMG_XX/IMG_EXX파일 이동시키기
+const oldPath = 'usingDir/a.mp4';
+const newPath = 'videoDir/a.mp4';
+console.log(usingDir);
+console.log(videoDir);
+fs.rename(oldPath, newPath, (err) => {
+  console.error(err)
+})
 
 
 
