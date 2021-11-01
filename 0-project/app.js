@@ -19,12 +19,15 @@ const capturedDir = path.join(usingDir, 'captured');
 !fs.existsSync(capturedDir) && fs.mkdirSync(capturedDir)
 
 // 해당 폴더로 원하는 mp4/mov, png/aae, IMG_XX/IMG_EXX파일 이동시키기
-const oldPath = 'usingDir/a.mp4';
-const newPath = 'videoDir/a.mp4';
-console.log(usingDir);
-console.log(videoDir);
-fs.rename(oldPath, newPath, (err) => {
-  console.error(err)
+const oldPath = path.join(usingDir, "a.mp4");
+const newPath = path.join(videoDir, "a.mp4")
+
+fs.rename(oldPath, newPath, function(err) {
+  if(err) {
+    throw err
+  } else {
+    console.log('sucess');
+  }
 })
 
 
