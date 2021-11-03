@@ -57,5 +57,32 @@ Most popular NoSQL databases
 - Cloud Bigtable
 - mongoDB (Document)
 - DynamoDB (Key-value)
+-------------------------------------------------------------
+
+19.5 ORM & ODM
+
+ORM (Object Relational Mapping)
+: 코드에 여러가지 object가 있다면 이것을 DB에 저장하기 위해 우리가 스스로 어떻게 object를 table로 변환할 건지, 어떻게 SCHEMA를 만들고 분할할건지, DB에서 어떻게 DB를 읽어와서 어떻게 object로 변환할 건지 자동으로 해결해줌
+
+GOOD
+- Business Logic
+- No Bolierplate Code: 반복 코드 줄여줌
+- DB Abstraction: 다른 SQL과 호환이 잘됨
+- SCHEMA migration: code 변경시 자동 처리
+
+BAD
+- Suboptimal queries: ORM API로는 상세한 query를 할수없음
+                     서로 다른 ORM마다 다른 API를 제공하기떄문  
+- SQL Knowledge: SQL 지식이 없다면 효율적인 query 못할 수 있음
+- Complex Queries: 복잡한 query를 하기 힘듬
+
+ORM 종류
+- TYPEORM
+- Sequeliz
+- Prisma
+
+ODM(Object Document Mapper) 종류
+- mongoose
+- mongoDB
 
 
