@@ -1,0 +1,28 @@
+Database: organized collection of data, generally stored and accessed electronically from a computer system
+
+Flat-File Database
+- simple data
+- inflexible
+- inefficient
+- Poor performance
+
+Database Management System(DBMS)
+- Optimised for data storage & retrieval: data 저장 및 읽는데 최적화
+- handles complex data: 복잡한 data 다룸
+- concurrent accessed: 안전하게 동시다발 접근가능
+- data security: 보안 우수
+- complex itself: 복잡해서 배우기 어려움
+
+SQL(Structured Qudry Language) : 관계형 DB
+: Designed for managing data relational databases
+
+NoSQL: 관계가 없는 DB
+
+SQL DB: organized collection of one of more Tables of rows and columns
+SCHEMA: 숫자 type ID, 문자열 type 이름 등
+-> Data integrity: data의 온전함, 진실성 보전(다른 종류,type data를 넣을 수 없기때문)
+
+Basic structure of an SQL Query
+- SELECT: lists a record attributes to be copied
+- FROM: lists tables(relations) to be used
+- WHERE: corresponds to selection predicate 
