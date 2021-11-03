@@ -18,6 +18,7 @@ SQL(Structured Qudry Language) : 관계형 DB
 
 NoSQL: 관계가 없는 DB
 
+(since 1990)
 SQL DB: organized collection of one of more Tables of rows and columns
 SCHEMA: 숫자 type ID, 문자열 type 이름 등
 -> Data integrity: data의 온전함, 진실성 보전(다른 종류,type data를 넣을 수 없기때문)
@@ -25,4 +26,36 @@ SCHEMA: 숫자 type ID, 문자열 type 이름 등
 Basic structure of an SQL Query
 - SELECT: lists a record attributes to be copied
 - FROM: lists tables(relations) to be used
-- WHERE: corresponds to selection predicate 
+- WHERE: corresponds to selection predicate
+
+Most Popular SQL databases
+- ORACLE
+- SQL Server(Microsoft)
+- MySQL: Free
+- SQLite: Free
+- PostgreSQL: Free
+
+-------------------------------------------------------------
+19.4 NoSQL 그 모든것(since 1998)
+1. Don't have rigid, strict schema(schema-less)
+2. Non-relational, hence cluster-friendly: 관계형X -> 저장하고 자하는 data를 여러개로 분산해서 sever에서 관리하기 용이
+3. Address specific prolems or use cases
+
+The most commonly used NoSQL DB in Web Dev
+< mongoDB >
+- primary unit of data is a document
+- Documents organised in collections
+- Document structure is not enforced by DB
+- Each documents is self-contained
+- Data duplication instead of relation
+ => NoSQL에서 관계를 가지기 시작하면 장점이 사라짐
+
+Most popular NoSQL databases
+- cassandra (Wide column)
+- neo4j (Graph)
+- Redis (Key-value)
+- Cloud Bigtable
+- mongoDB (Document)
+- DynamoDB (Key-value)
+
+
