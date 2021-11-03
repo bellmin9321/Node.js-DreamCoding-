@@ -57,8 +57,8 @@ Most popular NoSQL databases
 - Cloud Bigtable
 - mongoDB (Document)
 - DynamoDB (Key-value)
--------------------------------------------------------------
 
+-------------------------------------------------------------
 19.5 ORM & ODM
 
 ORM (Object Relational Mapping)
@@ -84,5 +84,50 @@ ORM 종류
 ODM(Object Document Mapper) 종류
 - mongoose
 - mongoDB
+
+-------------------------------------------------------------
+19.6 SQL vs NoSQL 언제 어떤것을?
+데이터베이스 개념과 종류들
+                |   SQL     |     NoSQL
+|---------------------------|-----------------
+|난이도         |   중급    |     초급       |
+|data 구조      |   고정    |     유연       |
+|data 찾기      |   쉬움    |     쉬움       |
+|연관query      |   쉬움    |     어려움     |
+|data 분리&생성 |   쉬움    |     어려움     |
+|확장성         |   어려움  |     쉬움       |
+|운영비용       |   비쌈    |     저렴       |
+---------------------------------------------
+
+* scaling(확장성)
+Vertical(up/down):  +RAM +CPU +Disk   => SQL
+horizontal(out/in): +Add more servers => NoSQL
+
+SQL vs NoSQL: how to choose?
+1. THe ype of data in question: 어떤 data type을 저장 및 사용할지
+2. The amount of data: 얼마나 많은 사용자와 data가 필요할지
+3. How data will be queried? data마다 서로 관계가 있는지, 관계가 있다면 data를 서로 묶어서 query를 하여 찾을 확률이 있는지)
+
+SQL
+- Accounting Software
+- E-commerce platforms
+- customer Relationship Software(CRM)
+
+NoSQL
+- SNS (Graph)
+- Distributed cache (key-value)
+- Content Management Systems (document)
+- Real-time analytics (wide-column): 빅데이터
+
+Hybrid approach (SQL & NoSQL 둘다사용)
+: Choose a DB appropriate for particular problem
+works very well with mecroservice architecture
+
+- User Service -> mongoDB
+- Billing Service -> MySQL
+- Transcoding Service -> DynamoDB
+
+
+
 
 
