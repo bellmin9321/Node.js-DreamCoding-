@@ -22,15 +22,29 @@ const capturedDir = path.join(usingDir, 'captured');
 const oldPath = path.join(usingDir, "a.mp4");
 const newPath = path.join(videoDir, "a.mp4")
 
-fs.rename(oldPath, newPath, function(err) {
-  if(err) {
-    throw err
-  } else {
-    console.log('sucess');
-  }
-})
+const arr = ['mp4', 'mov', 'png', 'jpg', 'IMG_', 'IMG_E'];
+const videoFile = arr[0];
+  console.log(videoFile);
+
+  const video = path.extname('b.mov') || path.extname('a.mp4')
+console.log(video);
 
 
+
+
+
+
+
+// const videoFile =  arr[ i < 2]
+// console.log(videoFile);
+
+// fs.rename(oldPath, newPath, function(err) {
+//   if(err) {
+  //     throw err
+//   } else {
+//     console.log('sucess');
+//   }
+// })
 
 // ---------------------------------------------------------
 // function mkdir (dirPath) {
