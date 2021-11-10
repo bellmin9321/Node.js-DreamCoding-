@@ -22,15 +22,25 @@ const capturedDir = path.join(usingDir, 'captured');
 const oldPath = path.join(usingDir, "a.mp4");
 const newPath = path.join(videoDir, "a.mp4")
 
-const arr = ['mp4', 'mov', 'png', 'jpg', 'IMG_', 'IMG_E'];
-const videoFile = arr[0];
-  console.log(videoFile);
+fs.rename(oldPath, newPath, function(files) {
 
-  const video = path.extname('b.mov') || path.extname('a.mp4')
-console.log(video);
+})
+
+fs.readdir(folder, (err, files) => {
+  files.forEach(file => {
+    console.log(file);
+  })
+})
+
+//  해당 확장자 파일들을 분류 후 원하는 폴더로 이동시켜야됨,, 그렇다면 그 확장자에 맞는 파일들을 어떻게 분류할 것이냐..
 
 
+// const arr = ['mp4', 'mov', 'png', 'jpg', 'IMG_', 'IMG_E'];
+// const videoFile = arr[0];
+//   console.log(videoFile);
 
+//   const video = path.extname('b.mov') && path.extname('a.mp4')
+// console.log(video);
 
 
 
