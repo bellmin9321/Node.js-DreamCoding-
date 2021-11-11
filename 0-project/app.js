@@ -28,7 +28,9 @@ fs.rename(oldPath, newPath, function(files) {
 
 fs.readdir(folder, (err, files) => {
   files.forEach(file => {
-    console.log(file);
+    if(!fs.lstatSync(path.resolve(folder, file)).isDirectory()) {
+      console.log('File: ' + file);
+    }
   })
 })
 
