@@ -28,9 +28,11 @@ const capturedDir = path.join(usingDir, 'captured');
 
 fs.readdir(folder, (err, files) => {
   files.forEach(file => {
-    console.log(file);
     const spt = file.split('.');
-    console.log(spt);
+    const length = spt.length
+    if (spt[length-1] === 'jpg'|'png') {
+      console.log(file);
+    }
   })
 })
 
