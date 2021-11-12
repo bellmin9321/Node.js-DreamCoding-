@@ -19,20 +19,21 @@ const capturedDir = path.join(usingDir, 'captured');
 !fs.existsSync(capturedDir) && fs.mkdirSync(capturedDir)
 
 // 해당 폴더로 원하는 mp4/mov, png/aae, IMG_XX/IMG_EXX파일 이동시키기
-const oldPath = path.join(usingDir, "a.mp4");
-const newPath = path.join(videoDir, "a.mp4")
+// const oldPath = path.join(usingDir, "");
+// const newPath = path.join(targetDir, "")
 
-fs.rename(oldPath, newPath, function(files) {
+// fs.rename(oldPath, newPath, function(files) {
 
-})
+// })
 
 fs.readdir(folder, (err, files) => {
   files.forEach(file => {
-    if(!fs.lstatSync(path.resolve(folder, file)).isDirectory()) {
-      console.log('File: ' + file);
-    }
+    console.log(file);
+    const spt = file.split('.');
+    console.log(spt);
   })
 })
+
 
 //  해당 확장자 파일들을 분류 후 원하는 폴더로 이동시켜야됨,, 그렇다면 그 확장자에 맞는 파일들을 어떻게 분류할 것이냐..
 
