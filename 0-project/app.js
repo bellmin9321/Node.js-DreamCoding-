@@ -30,11 +30,17 @@ fs.readdir(folder, (err, files) => {
   files.forEach(file => {
     const spt = file.split('.');
     const length = spt.length
-    if (spt[length-1] === 'jpg'|'png') {
+    if (spt[length-1] === 'png' || spt[length-1] === 'jpg') {
+      console.log(file);
+    } else if (spt[length-1] === 'mp4' || spt[length-1] === 'mov') {
+      console.log(file);
+    } else if (spt[length-1] === 'aae') {
       console.log(file);
     }
   })
 })
+
+function move(file, )
 
 
 //  해당 확장자 파일들을 분류 후 원하는 폴더로 이동시켜야됨,, 그렇다면 그 확장자에 맞는 파일들을 어떻게 분류할 것이냐..
