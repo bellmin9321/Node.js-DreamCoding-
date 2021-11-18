@@ -19,8 +19,7 @@ const capturedDir = path.join(usingDir, 'captured');
 !fs.existsSync(capturedDir) && fs.mkdirSync(capturedDir)
 
 // 해당 폴더로 원하는 mp4/mov, png/aae, IMG_XX/IMG_EXX파일 이동시키기
-// const oldPath = path.join(usingDir, "");
-// const newPath = path.join(targetDir, "")
+
 
 // fs.rename(oldPath, newPath, function(files) {
 
@@ -39,8 +38,15 @@ fs.readdir(folder, (err, files) => {
     }
   })
 })
+// 이제 해야될건 확장자를 이렇게 읽었단말야 그럼 이 읽은 파일들을 어떻게 뽑아내서 지정 폴더로 옮길까? 옮기는 함수를 만들자
+function moveFile(oldPath, newPath) {
+  const oldPath = path.join(usingDir, "");
+  const newPath = path.join(targetDir, "");
 
-function move(file, )
+  fs.rename(oldPath, newPath)
+}
+
+// function move(file, )
 
 
 //  해당 확장자 파일들을 분류 후 원하는 폴더로 이동시켜야됨,, 그렇다면 그 확장자에 맞는 파일들을 어떻게 분류할 것이냐..
