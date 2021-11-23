@@ -25,39 +25,43 @@ const capturedDir = path.join(usingDir, 'captured');
 
 // })
 
-fs.readdir(folder, (err, files) => {
+const allFiles = fs.readdir(folder, (err, files) => {
   files.forEach(file => {
     const spt = file.split('.');
     const length = spt.length
     if (spt[length-1] === 'png' || spt[length-1] === 'jpg') {
-      console.log(file);
+      const picsFile = file;
+      return picsFile
     } else if (spt[length-1] === 'mp4' || spt[length-1] === 'mov') {
-      console.log(file);
+      const videoFile = file;
+      return videoFile;
     } else if (spt[length-1] === 'aae') {
-      console.log(file);
+      const etcFile = file;
+      return etcFile;
     }
   })
 })
+console.log(files);
+
+// extension 분류 다른 방법
+const EXTENSION = '.txt';
+const targetFiles = files.filter(file => {
+  return path.extname(file).toLowerCase() === EXTENSION;
+})
 // 이제 해야될건 확장자를 이렇게 읽었단말야 그럼 이 읽은 파일들을 어떻게 뽑아내서 지정 폴더로 옮길까? 옮기는 함수를 만들자
-function moveFile(oldPath, newPath) {
-  const oldPath = path.join(usingDir, "");
-  const newPath = path.join(targetDir, "");
+// function moveFile(oldPath, newPath) {
+//   const oldPath = path.join(usingDir, "");
+//   const newPath = path.join(targetDir, "");
 
-  fs.rename(oldPath, newPath)
-}
+//   fs.rename(oldPath, newPath)
+//   console.log(file);
+// }
 
+// moveFile(file)
 // function move(file, )
 
 
 //  해당 확장자 파일들을 분류 후 원하는 폴더로 이동시켜야됨,, 그렇다면 그 확장자에 맞는 파일들을 어떻게 분류할 것이냐..
-
-
-// const arr = ['mp4', 'mov', 'png', 'jpg', 'IMG_', 'IMG_E'];
-// const videoFile = arr[0];
-//   console.log(videoFile);
-
-//   const video = path.extname('b.mov') && path.extname('a.mp4')
-// console.log(video);
 
 
 
