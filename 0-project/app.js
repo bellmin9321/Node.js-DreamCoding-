@@ -20,34 +20,58 @@ const capturedDir = path.join(usingDir, 'captured');
 
 // 해당 폴더로 원하는 mp4/mov, png/aae, IMG_XX/IMG_EXX파일 이동시키기
 
+// 폴더 안에 있는 파일들을 다 돌면서 해당하는 mp4|mov, png|aae, IMG_1234(IMG_E1234)
+fs.promises
+  .readdir(usingDir) //
+  .then(processFiles)
+  .catch(console.log)
 
-// fs.rename(oldPath, newPath, function(files) {
-
-// })
-
-const allFiles = fs.readdir(folder, (err, files) => {
+function processFiles(files) {
   files.forEach(file => {
-    const spt = file.split('.');
-    const length = spt.length
-    if (spt[length-1] === 'png' || spt[length-1] === 'jpg') {
-      const picsFile = file;
-      return picsFile
-    } else if (spt[length-1] === 'mp4' || spt[length-1] === 'mov') {
-      const videoFile = file;
-      return videoFile;
-    } else if (spt[length-1] === 'aae') {
-      const etcFile = file;
-      return etcFile;
+    if(videoFile(file)) {
+      console.log('video', file);
+    } else if(capturedFile(file)) {
+      console.log('captured', file);
+    } else if (duplicatedFile(file)) {
+      console.log('duplicated', file);
     }
   })
-})
-console.log(files);
+}
 
-// extension 분류 다른 방법
-const EXTENSION = '.txt';
-const targetFiles = files.filter(file => {
-  return path.extname(file).toLowerCase() === EXTENSION;
-})
+function videoFile(file) {
+  return true;
+}
+function capturedFile(file) {
+  return true;
+}
+function duplicatedFile(file) {
+  return true;
+}
+
+// const allFiles = fs.readdir(folder, (err, files) => {
+//   files.forEach(file => {
+//     const spt = file.split('.');
+//     const length = spt.length
+//     if (spt[length-1] === 'png' || spt[length-1] === 'jpg') {
+//       const picsFile = file;
+//       return picsFile
+//     } else if (spt[length-1] === 'mp4' || spt[length-1] === 'mov') {
+//       const videoFile = file;
+//       return videoFile;
+//     } else if (spt[length-1] === 'aae') {
+//       const etcFile = file;
+//       return etcFile;
+//     }
+//   })
+// })
+// console.log(files);
+
+// // extension 분류 다른 방법
+// const EXTENSION = '.txt';
+// const targetFiles = files.filter(file => {
+//   return path.extname(file).toLowerCase() === EXTENSION;
+// })
+
 // 이제 해야될건 확장자를 이렇게 읽었단말야 그럼 이 읽은 파일들을 어떻게 뽑아내서 지정 폴더로 옮길까? 옮기는 함수를 만들자
 // function moveFile(oldPath, newPath) {
 //   const oldPath = path.join(usingDir, "");
@@ -62,20 +86,6 @@ const targetFiles = files.filter(file => {
 
 
 //  해당 확장자 파일들을 분류 후 원하는 폴더로 이동시켜야됨,, 그렇다면 그 확장자에 맞는 파일들을 어떻게 분류할 것이냐..
-
-
-
-
-// const videoFile =  arr[ i < 2]
-// console.log(videoFile);
-
-// fs.rename(oldPath, newPath, function(err) {
-//   if(err) {
-  //     throw err
-//   } else {
-//     console.log('sucess');
-//   }
-// })
 
 // ---------------------------------------------------------
 // function mkdir (dirPath) {
