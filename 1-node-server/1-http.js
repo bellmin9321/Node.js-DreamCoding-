@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
   if(url === '/') {
     res.setHeader('Content-Type', 'text/html');
     res.write('<html>');
-    res.write('<head><title>Academy</title></head>');
+    res.write('<head><title>dream-coding</title></head>');
     res.write('<body><h1>Welcome!</h1></body>');
     res.write('</html>');
   } else if (url === '/courses') {
