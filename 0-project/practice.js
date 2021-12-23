@@ -55,3 +55,28 @@ console.log(i);
 
 var j = 'No wAy'.toUpperCase();
 console.log(j);
+
+const n = Number("abc");
+console.log(n);
+
+/* types
+1. string(문자열)
+2. number(숫자)
+3. Boolean Type
+4. Undefined Type
+5. Null Type
+6. Object Type
+7. Symbol Type
+*/
+
+const person = {};
+person.name = 'bellmin';
+console.log(person.name);
+console.log(person);
+console.log(typeof person);
+
+const list = [1, 2, 3];
+console.log(typeof list);
+
+function foo() {}
+console.log(typeof foo);
